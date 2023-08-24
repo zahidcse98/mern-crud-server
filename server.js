@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 5000;
+const port = 80;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -26,7 +26,7 @@ app.post('/api/items', (req, res) => {
   return newItem.save();
 });
 
-app.get('/api/items/server', async(req, res) => {
+app.get('/', async(req, res) => {
   res.send('Request Handled from server 1.')
 })
 

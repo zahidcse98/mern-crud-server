@@ -9,10 +9,10 @@ const port = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/mycrudapp', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// mongoose.connect('mongodb://localhost:27017/mycrudapp', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 
 const ItemSchema = new mongoose.Schema({
   name: String,
@@ -54,7 +54,6 @@ app.delete('/api/items/:id', async(req, res) => {
 })
 
 // Implement update and delete routes similarly...
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

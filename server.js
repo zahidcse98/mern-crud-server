@@ -26,6 +26,10 @@ app.post('/api/items', (req, res) => {
   return newItem.save();
 });
 
+app.get('/api/items/server', async(req, res) => {
+  res.send('Request Handled from server 1.')
+})
+
 app.get('/api/items', async(req, res) => {
     try {
         const result = await Item.find();
